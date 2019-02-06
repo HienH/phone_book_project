@@ -1,0 +1,354 @@
+/* RESET CSS -------------------------------------  */
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: auto;
+  /* Removing all margin and padding from elements */
+  margin: 0;
+  margin: 0;
+  text-decoration: none;
+
+
+}
+
+article, aside, footer, header, main, nav, section {
+  /*Older browsers who don't respect html5 will not recognise these elements and will automatically make them inline. */
+  display: block;
+}
+
+button, fieldset, input, textarea, select {
+  /* All form elemetns given out-of-the-box styles by browsers */
+  background: none;
+  border: none;
+  border-radius: none;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  /* Removing ghost margins */
+  display: block;
+}
+
+/* ----------------------------------------------  */
+
+body {
+  background-color: white;
+  height: 100%;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 120px;
+  font-family: 'Sarabun', sans-serif;
+  padding: 30px 0px;
+  color: black;
+  font-weight: lighter;
+
+
+}
+
+header {
+  clear: both;
+  width: 100%;
+}
+
+#logobar {
+  display: relative;
+  width: 100%;
+  height: 200px;
+  display: inline;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+#logobar li {
+  list-style: none;
+}
+
+#logobar img {
+  float: left;
+  padding-left: 50px;
+  height: 100px;
+}
+
+#logobar h1 {
+  padding-top: 30px;
+  padding-right: 120px;
+  text-align: right;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 30px;
+  color: #042A2B;
+  float: right;
+
+}
+
+#navbar {
+  clear: both;
+  display: flex;
+  height: 50px;
+  background: #042A2B;
+}
+
+#navbar ul {
+  padding-top: 10px;
+  margin: 0 auto;
+}
+
+.nav-list-elements {
+  font-family: 'Sarabun', sans-serif;
+  display: inline;
+  list-style: none;
+  text-align: center;
+  padding-right: 200px;
+  font-size: 22px;
+}
+
+.nav-list-elements:hover {
+  display: inline;
+  color: #5EB1BF;
+}
+
+#last-nav-element {
+  padding-right: 0;
+}
+
+.navlinks {
+  color: #F75C03;
+  text-decoration: none;
+}
+
+.navbarlinks:hover {
+  color: #5EB1BF;
+}
+
+/* div.landline {
+height: 500px;
+position: relative;
+max-width: 100%;
+background:
+linear-gradient(
+                   rgba(0, 0, 0, 0.5),
+                   rgba(0, 0, 0, 0.5)),
+                   url("../images/womanonphone.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 490px) {
+  div.landline {
+    background: linear-gradient(
+                       rgba(20,20,20, .2),
+                       rgba(20,20,20, .2)),
+                       url("../images/blackphone.png");
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: no-repeat; */
+  }
+
+  .text {
+    color: black;
+    padding-top: 20px;
+  }
+
+
+  button.business_search {
+    width: 150px;
+  }
+}
+
+/* img.landline2 {
+  max-width: 100%;
+} */
+
+
+main {
+  clear: both;
+
+}
+
+
+.inputgroup {
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  color: black;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 0.25rem;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding-left: 12px;
+}
+
+button {
+  font-size: 18px;
+  padding: 5px;
+}
+
+}
+
+section.redirect_buttons {
+  clear: both;
+  width: 100%;
+  position: relative;
+
+}
+
+section.findperson {
+  float: left;
+  /* margin: 100px auto; */
+  height: 550px;
+  width: 50%;
+  /* Code for background with grey overlay */
+  background: linear-gradient(
+                     rgba(20,20,20, .4),
+                     rgba(20,20,20, .4)),
+                     url("../images/manonphone.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+section.findperson:hover {
+  background: linear-gradient(
+                     rgba(247, 92, 3, .4),
+                     rgba(247, 92, 3, .4)),
+                     url("../images/manonphone.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+section.findbusiness {
+  border-left: 1px solid white;
+  float: right;
+  /* margin: 100px auto; */
+  height: 550px;
+  width: 50%;
+  background: linear-gradient(
+                     rgba(20,20,20, .4),
+                     rgba(20,20,20, .4)),
+                     url("../images/barbershop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+section.findbusiness:hover {
+  background: linear-gradient(
+                     rgba(75, 143, 140, .4),
+                     rgba(75, 143, 140, .4)),
+                     url("../images/barbershop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  font-family: 'Sarabun', sans-serif;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 48px;
+}
+
+
+h2 {
+  text-align: center;
+  color: white;
+  padding: 200px 30px 30px 30px;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 70px;
+
+}
+
+form {
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  padding: 50px 0px;
+  font-size: 28px;
+}
+
+button {
+
+  background: white;
+  border: 2px solid #333;
+  margin: 15px auto;
+}
+
+input {
+  padding: 0px 10px;
+  font-size: 20px;
+}
+
+label {
+  display: inline;
+  font-family: 'Sarabun', sans-serif;
+  color: black;
+  padding-right: 20px;
+}
+
+
+button.business_search {
+  display: flex;
+  padding: 20px;
+  width: 275px;
+  margin: 10px auto;
+  text-align: center;
+  justify-content: center;
+}
+
+button.business_search:hover {
+  background: #191919;
+  color: white;
+}
+
+button.submit {
+  padding: 10px;
+}
+
+button:hover {
+  background: #4B8F8C;
+  color: white;
+}
+
+#wrong-page {
+  text-align: center;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 22px;
+  padding: 30px;
+}
+
+#wrong-page p {
+  padding: 10px;
+}
+
+#wrong-page a {
+  text-decoration: underline;
+  color: black;
+}
+
+#wrong-page a:hover {
+  color: #F75C03;
+}
+
+footer {
+  clear: both;
+  height: 100px;
+  background: #F75C03;
+}
+
+footer p {
+  color: white;
+  font-size: 18px;
+  margin: 0 auto;
+  font-family: 'Sarabun', sans-serif;
+  text-align: center;
+  padding-top: 35px;
+}

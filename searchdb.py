@@ -16,6 +16,7 @@ def getDb():
     try:
         conn = sqlite3.connect('phonebook.db')
         cursor = conn.cursor()
+        print('hello')
         return cursor
     except:
         return False
@@ -29,8 +30,9 @@ def query_db():
     except:
         return None
 
-
-def getBuisnessPostcode():
+#######################SEARCH BUSINESS ######################################
+        
+def getBusinessDB():
       db= getDb()
       query = db.execute(""" SELECT
                             businessphonebook.id,
@@ -54,19 +56,26 @@ def getBuisnessPostcode():
       results = query.fetchall()
       return results
 
+#######################GE USER POSTCODE ######################################
 
-def get_user_postcode():
-    user_postcode = input('Please enter your postcode:').upper().replace(' ','')
+#def get_user_postcode():
+#    user_postcode = input('Please enter your postcode:').upper().replace(' ','')
+#    if len(user_postcode) <=9:
+#        return user_postcode
+#    else:
+#        return False
+    
+def getuser_geolocation(user_post):
     endpoint_postcode = "https://api.postcodes.io/postcodes/"
-    postcode_url= endpoint_postcode+user_postcode
+    postcode_url= endpoint_postcode+user_post
     post_response= requests.get(postcode_url).json()
     if post_response['status'] == 200:
             lon = post_response['result']['longitude']
             lat =post_response['result']['latitude']
-
             return lon,lat
     else:
         print("Please enter correct postcode")
+        return False
 
 def distance(lat1,long1,lat2,long2):
     R = 6373.0 # approximate radius of earth in km
@@ -79,9 +88,9 @@ def distance(lat1,long1,lat2,long2):
     hdist = R * c
     return hdist
 
-def filterPostcodes():
-    database = getBuisnessPostcode()
-    user_log_lat = list(get_user_postcode())
+def filterPostcodes(user_post):
+    database = getBusinessDB()
+    user_log_lat = list(getuser_geolocation(user_post))
     busi = {}
     for row in database:
        business_lat_lat= list(row[5:7])
@@ -93,21 +102,21 @@ def filterPostcodes():
 
 
 
-def display50():
+def display50Business(user_post):
     try:
         category_list = []
-        top50 = filterPostcodes()
-        database = getBuisnessPostcode()
+        top50 = filterPostcodes(user_post)
+        database = getBusinessDB()
         for values in top50:
             for data in database:
                 if values[0] == data[1]:
                     category_list.append(data)
 
-        for row in category_list:
-            print(row)
+        return category_list
+    
     except Exception as e:
         print (e)
-
+        
 
 #- enter postcode/ category
 #- find relevant and closest store

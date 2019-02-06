@@ -1,0 +1,54 @@
+{%extends "layout.html"%}
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+
+{%block nav%}
+<nav id="navbar">
+	<ul>
+		<a href="index.html" class="navlinks">
+			<li class="nav-list-elements">Home</li>
+		</a>
+		<a href="#findperson" class="navlinks">
+			<li class="nav-list-elements">Find a person</li>
+		</a>
+		<a href="#findbusiness" class="navlinks">
+			<li class="nav-list-elements" id="last-nav-element">Find a business</li>
+		</a>
+	</ul>
+</nav>
+{%endblock%}
+
+{%block content%}
+<body>
+  <h1>{{title}}</h1>
+  <form method="POST" action="/person_result">
+    <label for="name">Search by name:</label>
+    <input class="input" name="name" type="text" placeholder="Search name" id="name">
+    {%if message%}
+    <p>{{message}}</p>
+    {%endif%}
+
+
+    <button class="button is-info" type="submit">
+      Search
+    </button>
+
+  </form>
+
+  <section id="wrong-page">
+    <p>Looking for a business address?</p>
+    <p>Head to our <a href="business_search.html">business search</a> page instead.</p>
+  </section>
+
+
+</body>
+
+{% endblock %}
+</html>

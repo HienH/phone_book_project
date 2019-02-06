@@ -9,42 +9,34 @@ import json
 import requests
 import sqlite3
 
-from flask import Flask,render_template
+from flask import Flask,render_template,request
 from searchdb import * 
 app = Flask(__name__)
 
 
 
 @app.route("/")
-@app.route("/home")
 def home():
+        
+    return render_template("index.html", title = "home" )
+
+
+
+@app.route("/result", methods=["POST"])
+def result():
+    form_data = request.form
+    postcode = form_data["postcode"].upper().replace(' ','')
     
-    conn = sqlite3.connect('phonebook.db')
-    c = conn.cursor()
+    if postcode:
+        geolocation= display50Business(postcode)
+        return render_template("result.html", title = "result", **locals())
+    else:
+        message = "need postcode"
+        return render_template("index.html", title = "result", **locals())
     
-    businesses = getherdatabaseInfo_select()
-
-    search= request.form.get('searchBusiness')
-#    search = search.lower().title()
-#    category_list = []
-#    for key, values in businesses.items():
-#        if search_catergory in values:
-#            category_list.append(key)
-#    if category_list == [] :
-#        print("none found")
-#    else:
-#        print(category_list)
-#    
-   
-
-
-    return render_template("index.html", title = "home")
-
-    c.close()
-    conn.close() 
+    
 
   
-
 if __name__ == '__main__':
     app.run(debug =True)
       

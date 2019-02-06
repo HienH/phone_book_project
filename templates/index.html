@@ -1,26 +1,24 @@
-<!DOCTYPE html>
-<html>
+﻿{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  <script src="main.js"></script>
-</head>
 
-<body>
-  <h1>{{title}}</h1>
-  <form method="POST" action="/">
-    <input class="input" name="searchBusiness" type="text" placeholder="Search Business Category">
-    <button class="button is-info" type="submit">
-      Search
-    </button>
-  </form>
 
-  {% block content %}
-  {% endblock %}
-</body>
 
-</html>
+{% block content %}
+<section id="redirect_buttons">
+	<section class="findperson" id="findperson">
+
+		<a href="person_search.html">
+			<h2>Search a person</h2>
+
+	</section>
+
+
+	<section class="findbusiness">
+		<a href="business_search.html">
+			<h2>Search a business</h2>
+	</section>
+
+</section>
+
+{% endblock %}
