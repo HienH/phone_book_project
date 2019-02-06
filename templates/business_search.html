@@ -12,17 +12,17 @@
 
 {%block nav%}
 <nav id="navbar">
-	<ul>
-		<a href="index.html" class="navlinks">
-			<li class="nav-list-elements">Home</li>
-		</a>
-		<a href="#findperson" class="navlinks">
-			<li class="nav-list-elements">Find a person</li>
-		</a>
-		<a href="#findbusiness" class="navlinks">
-			<li class="nav-list-elements" id="last-nav-element">Find a business</li>
-		</a>
-	</ul>
+  <ul>
+    <a href="index.html" class="navlinks">
+      <li class="nav-list-elements">Home</li>
+    </a>
+    <a href="#findperson" class="navlinks">
+      <li class="nav-list-elements">Find a person</li>
+    </a>
+    <a href="#findbusiness" class="navlinks">
+      <li class="nav-list-elements" id="last-nav-element">Find a business</li>
+    </a>
+  </ul>
 </nav>
 {%endblock%}
 
@@ -44,9 +44,9 @@
   </form>
 
   <form method="POST" action="/business_result" id="business_by_postcode">
-    <label for="postcode">Search for:</label>
-    <input class="input" name="category" type="text" placeholder="Category of business" id="category">
-    <label for="postcode">in:</label>
+    <!-- <label for="postcode">Search for:</label>
+    <input class="input" name="category" type="text" placeholder="Category of business" id="category"> -->
+    <!-- <label for="postcode">in:</label> -->
     <input class="input" name="postcode" type="text" placeholder="Enter town or postcode" id="location">
     {%if message%}
     <p>{{message}}</p>
@@ -58,10 +58,10 @@
 
   </form>
 
-<section id="wrong-page">
-  <p>Looking for a residential address?</p>
-  <p>Head to our <a href="person_search.html">residential search page</a> instead.</p>
-</section>
+  <section id="wrong-page">
+    <p>Looking for a residential address?</p>
+    <p>Head to our <a href="person_search.html">residential search page</a> instead.</p>
+  </section>
 
 
 </body>

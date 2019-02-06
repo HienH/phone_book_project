@@ -13,8 +13,14 @@
 <body>
   <h1>{{title}}</h1>
   {%if geolocation%}
-  <p>{{geolocation}}</p>
+
+  <ol>
+    {% for x in geolocation %}
+    <li>{{ x }}</li>
+    {% endfor %}
+  </ol>
   {%endif%}
+
 </body>
 
 </html>
