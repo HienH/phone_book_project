@@ -31,7 +31,7 @@ def query_db():
         return None
 
 #######################SEARCH BUSINESS ######################################
-        
+
 def getBusinessDB():
       db= getDb()
       query = db.execute(""" SELECT
@@ -64,7 +64,7 @@ def getBusinessDB():
 #        return user_postcode
 #    else:
 #        return False
-    
+
 def getuser_geolocation(user_post):
     endpoint_postcode = "https://api.postcodes.io/postcodes/"
     postcode_url= endpoint_postcode+user_post
@@ -113,10 +113,10 @@ def display50Business(user_post):
                     category_list.append(data)
 
         return category_list
-    
+
     except Exception as e:
         print (e)
-        
+
 
 #- enter postcode/ category
 #- find relevant and closest store
@@ -127,19 +127,21 @@ def display50Business(user_post):
 
 def get_people():
     db = getDb()
-    query = "SELECT DISTINCT name, lastname, city, postcode, tel FROM peoplephonebook"
+    query = "SELECT DISTINCT * FROM peoplephonebook"
     db.execute(query)
     results = db.fetchall()
     return results
 
 def find_person_by_name(name): #Passed tests
     results = get_people() #Gets first_name, last_name, postcode, telephone_number
+    people_list = []
     for row in results:
+        print (row)
         firstName = row[0]
         lastName = row[1]
         if name.lower() in firstName.lower() or name.lower() in lastName.lower():
-            print (row)
-
+            results_list.append(row)
+    return people_list
 
 def find_person_by_postcode(postcode): #Passed tests
     input_postcode = str(postcode).replace(' ','').strip().lower()

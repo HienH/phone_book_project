@@ -1,5 +1,5 @@
 {%extends "layout.html"%}
-{%block title%} Residential Results {%endblock%}
+{%block title%} Business Results {%endblock%}
 
 
 <head>
@@ -48,23 +48,17 @@
         <tbody>
           {% for business in businesses %}
                 <tr>
-                  <td>{{ business[1] }}</td>
-                  <td>{{ business[2] }}</td>
-                  <td>{{ business[3] }}</td>
-                  <td>{{ business[4] }}</td>
-                  <td>{{ business[5] }}</td>
-                  <td>{{ business[6] }}</td>
-                  <td>{{ business[7] }}</td>
+                  <td>{{ person[1] }}</td>
+                  <td>{{ person[2] }}</td>
+                  <td>{{ person[3] }}</td>
+                  <td>{{ person[4] }}</td>
+                  <td>{{ person[5] }}</td>
+                  <td>{{ person[6] }}</td>
+                  <td>{{ person[7] }}</td>
                 </tr>
             {% endfor %}
         </tbody>
       </table>
 
 
-  <section id="wrong-page">
-    <p>Looking for a residential address?</p>
-    <p>Head to our <a href="person_search.html">residential search page</a> instead.</p>
-  </section>
-
-
-{% endblock %}
+{%endblock%}
