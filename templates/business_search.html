@@ -33,28 +33,28 @@
   <form method="POST" action="/business_results" id="business_by_name">
     <label for="business_name">Search for:</label>
     <input class="input" name="business_name" type="text" placeholder="business name search " id="business_name">
-    {%if message%}
-    <p>{{message}}</p>
+    {%if message_name%}
+    <p>{{message_name}}</p>
     {%endif%}
   </form>
 
 
   <h3>Business Category </h3>
-  <form method="POST" action="/businessCat_result" id="business_by_Cat">
+  <form method="POST" action="/businesscategory_results" id="businesscategory_results">
     <label for="category">Search for:</label>
     <input class="input" name="category" type="text" placeholder="Category business search " id="category">
-    {%if message%}
-    <p>{{message}}</p>
+    {%if message_category%}
+    <p>{{message_category}}</p>
     {%endif%}
 
   </form>
 
   <h3>Postcode search</h3>
-  <form method="POST" action="/business_postcode_result" id="business_by_postcode">
+  <form method="POST" action="/business_postcode_result" id="business_postcode_result">
     <label for="postcode">Search for:</label>
-    <input class="input" name="category" type="text" placeholder="Postcode business search " id="postcode">
-    {%if message%}
-    <p>{{message}}</p>
+    <input class="input" name="postcode" type="text" placeholder="Postcode business search " id="postcode">
+    {%if message_postcode%}
+    <p>{{message_postcode}}</p>
     {%endif%}
 
   </form>

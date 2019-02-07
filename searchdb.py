@@ -16,7 +16,6 @@ def getDb():
     try:
         conn = sqlite3.connect('phonebook.db')
         cursor = conn.cursor()
-        print('hello')
         return cursor
     except:
         return False
@@ -91,21 +90,20 @@ def distance(lat1,long1,lat2,long2):
     return hdist
 
 def filterPostcodes(user_post):
+    user_post = user_post.upper().replace(' ','') 
     database = getBusinessDB()
     user_log_lat = list(getuser_geolocation(user_post))
     busi = {}
     for row in database:
-       business_lat_lat= list(row[5:7])
+       business_lat_lat= list(row[6:8])
        dist = distance(user_log_lat[0],user_log_lat[1],float(business_lat_lat[0]),float(business_lat_lat[1]))
        busi[row[1]]= dist
     sorted_by_distance = sorted(busi.items(), key=lambda kv: kv[1])
-    top50 = sorted_by_distance[:51]
+    top50 = sorted_by_distance[:50]
     return top50
-
 
 def find_business_by_name(name): 
     results = getBusinessDB() 
-    error = "cannot find name"
     business_name_list = []
     for row in results:
         business_name = row[1]
@@ -113,28 +111,42 @@ def find_business_by_name(name):
            business_name_list.append(row)
     
     if business_name_list==[]:
-        return error
+        return "cannot find name"
     
     else:
         return business_name_list
 
-print(find_business_by_name('Dynabox'))
+#def display50Business(user_post):
+#    try:
+#        category_list = []
+#        top50 = filterPostcodes(user_post)
+#        database = getBusinessDB()
+#        for values in top50:
+#            for data in database:
+#                if values[0] == data[1]:
+#                    category_list.append(data)
+#
+#        return category_list
+#
+#    except Exception as e:
+#        print (e)
 
-def display50Business(user_post):
-    try:
-        category_list = []
-        top50 = filterPostcodes(user_post)
-        database = getBusinessDB()
-        for values in top50:
-            for data in database:
-                if values[0] == data[1]:
-                    category_list.append(data)
 
-        return category_list
+def business_by_category(category):
+    results = getBusinessDB() 
+    business_list = []
+    for row in results:
+        businesscategory = row[9]
+        if category.lower() in businesscategory.lower() :
+            business_list.append(row)
+            
+    if business_list==[]:
+        return "cannot find name"
+    
+    else:
+        return business_list
 
-    except Exception as e:
-        print (e)
-
+    return business_list
 
 #- enter postcode/ category
 #- find relevant and closest store
