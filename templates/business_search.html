@@ -1,5 +1,6 @@
-{% extends "layout.html" %}
-{% block title %}Business Search{% endblock %}
+{%extends "layout.html"%}
+{%block title%} Residential Results {%endblock%}
+
 
 <head>
   <meta charset="utf-8" />
@@ -12,51 +13,53 @@
 
 {%block nav%}
 <nav id="navbar">
-  <ul>
-    <a href="index.html" class="navlinks">
-      <li class="nav-list-elements">Home</li>
-    </a>
-    <a href="#findperson" class="navlinks">
-      <li class="nav-list-elements">Find a person</li>
-    </a>
-    <a href="#findbusiness" class="navlinks">
-      <li class="nav-list-elements" id="last-nav-element">Find a business</li>
-    </a>
-  </ul>
+	<ul>
+		<a href="/" class="navlinks">
+			<li class="nav-list-elements">Home</li>
+		</a>
+		<a href="person_search.html" class="navlinks">
+			<li class="nav-list-elements">Find a person</li>
+		</a>
+		<a href="business_search.html" class="navlinks">
+			<li class="nav-list-elements" id="last-nav-element">Find a business</li>
+		</a>
+	</ul>
 </nav>
 {%endblock%}
 
-{% block content %}
 
-<body>
-  <h1>{{title}}</h1>
+{%block content%}
 
-  <form method="POST" action="/result" id="business_by_name">
-    <label for="name">Search business by name:</label>
-    <input class="input" name="name" type="text" placeholder="Search name" id="name">
-    {%if message%}
-    <p>{{message}}</p>
-    {%endif%}
-    <button class="button is-info" type="submit">
-      Search
-    </button>
 
-  </form>
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-sm-12">
+      <table class=dataTable id="people_results">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Postcode</th>
+            <th>Telephone</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for business in businesses %}
+                <tr>
+                  <td>{{ business[1] }}</td>
+                  <td>{{ business[9] }}</td>
+                  <td>{{ business[2] }}</td>
+                  <td>{{ business[3] }}</td>
+                  <td>{{ business[4] }}</td>
+                  <td>{{ business[5] }}</td>
+                  <td>{{ business[8] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
 
-  <form method="POST" action="/business_result" id="business_by_postcode">
-    <!-- <label for="postcode">Search for:</label>
-    <input class="input" name="category" type="text" placeholder="Category of business" id="category"> -->
-    <!-- <label for="postcode">in:</label> -->
-    <input class="input" name="postcode" type="text" placeholder="Enter town or postcode" id="location">
-    {%if message%}
-    <p>{{message}}</p>
-    {%endif%}
-
-    <button class="button is-info" type="submit">
-      Search
-    </button>
-
-  </form>
 
   <section id="wrong-page">
     <p>Looking for a residential address?</p>
@@ -64,8 +67,4 @@
   </section>
 
 
-</body>
-
 {% endblock %}
-
-</html>
