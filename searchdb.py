@@ -58,12 +58,12 @@ def getBusinessDB():
 
 #######################GE USER POSTCODE ######################################
 
-#def get_user_postcode():
-#    user_postcode = input('Please enter your postcode:').upper().replace(' ','')
-#    if len(user_postcode) <=9:
-#        return user_postcode
-#    else:
-#        return False
+def get_user_postcode():
+    user_postcode = input('Please enter your postcode:').upper().replace(' ','')
+    if len(user_postcode) <=9:
+        return user_postcode
+    else:
+        return False
     
 def getuser_geolocation(user_post):
     endpoint_postcode = "https://api.postcodes.io/postcodes/"
