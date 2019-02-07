@@ -37,6 +37,7 @@ def getBusinessDB():
       query = db.execute(""" SELECT
                             businessphonebook.id,
                             businessphonebook.business_name,
+                            businessphonebook.address,
                             businessphonebook.city,
                             businessphonebook.country,
                             businessphonebook.postcode,
