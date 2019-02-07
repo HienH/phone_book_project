@@ -103,6 +103,22 @@ def filterPostcodes(user_post):
     return top50
 
 
+def find_business_by_name(name): 
+    results = getBusinessDB() 
+    error = "cannot find name"
+    business_name_list = []
+    for row in results:
+        business_name = row[1]
+        if name.capitalize() in business_name:
+           business_name_list.append(row)
+    
+    if business_name_list==[]:
+        return error
+    
+    else:
+        return business_name_list
+
+print(find_business_by_name('Dynabox'))
 
 def display50Business(user_post):
     try:

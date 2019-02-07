@@ -20,13 +20,28 @@ def index():
 
 
 
-@app.route("/business_search.html")
+@app.route("/business_search", )
 def business_search():
+    return render_template("business_search.html", title = "search")
+
+
+@app.route("/business_results",methods=["POST"])
+def business_results():
+    form_data = request.form
+    name = form_data["business_name"]
+    if name:
+        busines_names = find_business_by_name(name)
+        return render_template("business_results.html", title = "businessresults", **locals())
+    else:
+        message = "need postcode"
+        return render_template("business_search.html", title = "search", **locals())
+
+
     # results = getBusinessDB()
     # business_list = []
     # for result in results:
     #     business_list.append(result)
-    return render_template("business_search.html", title="search a business")
+    # return render_template("business_search.html", title="search a business")
 
 
 # @app.route("/business_result", methods=["POST"])
