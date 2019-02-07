@@ -22,11 +22,11 @@ def index():
 
 @app.route("/business_search.html")
 def business_search():
-    results = getBusinessDB()
-    business_list = []
-    for result in results:
-        business_list.append(result)
-    return render_template("business_search.html", title="search a business", businesses=business_list)
+    # results = getBusinessDB()
+    # business_list = []
+    # for result in results:
+    #     business_list.append(result)
+    return render_template("business_search.html", title="search a business")
 
 
 # @app.route("/business_result", methods=["POST"])

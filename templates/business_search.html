@@ -1,6 +1,5 @@
 {%extends "layout.html"%}
-{%block title%} Residential Results {%endblock%}
-
+{%block title%} Business Results {%endblock%}
 
 <head>
   <meta charset="utf-8" />
@@ -13,58 +12,61 @@
 
 {%block nav%}
 <nav id="navbar">
-	<ul>
-		<a href="/" class="navlinks">
-			<li class="nav-list-elements">Home</li>
-		</a>
-		<a href="person_search.html" class="navlinks">
-			<li class="nav-list-elements">Find a person</li>
-		</a>
-		<a href="business_search.html" class="navlinks">
-			<li class="nav-list-elements" id="last-nav-element">Find a business</li>
-		</a>
-	</ul>
+  <ul>
+    <a href="/" class="navlinks">
+      <li class="nav-list-elements">Home</li>
+    </a>
+    <a href="person_search.html" class="navlinks">
+      <li class="nav-list-elements">Find a person</li>
+    </a>
+    <a href="business_search.html" class="navlinks">
+      <li class="nav-list-elements" id="last-nav-element">Find a business</li>
+    </a>
+  </ul>
 </nav>
 {%endblock%}
 
+<div>
+  {%block content%}
 
-{%block content%}
-
-
-  <div class="row">
-    <div class="col-md-12 col-lg-12 col-sm-12">
-      <table class=dataTable id="people_results">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Address</th>
-            <th>City</th>
-            <th>Country</th>
-            <th>Postcode</th>
-            <th>Telephone</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for business in businesses %}
-                <tr>
-                  <td>{{ business[1] }}</td>
-                  <td>{{ business[9] }}</td>
-                  <td>{{ business[2] }}</td>
-                  <td>{{ business[3] }}</td>
-                  <td>{{ business[4] }}</td>
-                  <td>{{ business[5] }}</td>
-                  <td>{{ business[8] }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-      </table>
+  <h3>Business name search</h3>
+  <form method="POST" action="/business_by_name" id="business_by_name">
+    <label for="business_name">Search for:</label>
+    <input class="input" name="business_name" type="text" placeholder="business name search " id="business_name">
+    {%if message%}
+    <p>{{message}}</p>
+    {%endif%}
+  </form>
 
 
-  <section id="wrong-page">
-    <p>Looking for a residential address?</p>
-    <p>Head to our <a href="person_search.html">residential search page</a> instead.</p>
-  </section>
+  <h3>Business Category </h3>
+  <form method="POST" action="/businessCat_result" id="business_by_Cat">
+    <label for="category">Search for:</label>
+    <input class="input" name="category" type="text" placeholder="Category business search " id="category">
+    {%if message%}
+    <p>{{message}}</p>
+    {%endif%}
+
+  </form>
+
+  <h3>Postcode search</h3>
+  <form method="POST" action="/business_postcode_result" id="business_by_postcode">
+    <label for="postcode">Search for:</label>
+    <input class="input" name="category" type="text" placeholder="Postcode business search " id="postcode">
+    {%if message%}
+    <p>{{message}}</p>
+    {%endif%}
+
+  </form>
 
 
-{% endblock %}
+  {% endblock %}
+
+</div>
+<section id="wrong-page">
+  <p>Looking for a residential address?</p>
+  <p>Head to our <a href="person_search.html">residential search page</a> instead.</p>
+</section>
+
+
+</html>

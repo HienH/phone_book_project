@@ -25,15 +25,17 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Position</th>
-        <th>Office</th>
-        <th>Age</th>
-        <th>Start date</th>
-        <th>Salary</th>
+        <th>Category</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Postcode</th>
+        <th>Telephone</th>
       </tr>
     </thead>
     <tbody>
       <tr>
+        {%for business in buinesses %}
         <td>Tiger Nixon</td>
         <td>System Architect</td>
         <td>Edinburgh</td>
@@ -41,17 +43,9 @@
         <td>2011/04/25</td>
         <td>$320,800</td>
       </tr>
+      {%endfor %}
     </tbody>
-    <tfoot>
-      <tr>
-        <th>Name</th>
-        <th>Position</th>
-        <th>Office</th>
-        <th>Age</th>
-        <th>Start date</th>
-        <th>Salary</th>
-      </tr>
-    </tfoot>
+
   </table>
 
 

@@ -3,32 +3,32 @@
 {%block content%}
 
 
-  <div class="row">
-    <div class="col-md-12 col-lg-12 col-sm-12">
-      <table id="people_results">
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Address</th>
-            <th>Postcode</th>
-            <th>Country</th>
-            <th>Telephone Number</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for p in person %}
-                <tr>
-                  <td>{{ people[0] }}</td>
-                  <td>{{ people[1] }}</td>
-                  <td>{{ people[2] }}</td>
-                  <td>{{ people[3] }}</td>
-                  <td>{{ people[4] }}</td>
-                  <td>{{ people[5] }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-      </table>
+<div class="row">
+  <div class="col-md-12 col-lg-12 col-sm-12">
+    <table id="people_results">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Address</th>
+          <th>Postcode</th>
+          <th>Country</th>
+          <th>Telephone Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in person %}
+        <tr>
+          <td>{{ people[0] }}</td>
+          <td>{{ people[1] }}</td>
+          <td>{{ people[2] }}</td>
+          <td>{{ people[3] }}</td>
+          <td>{{ people[4] }}</td>
+          <td>{{ people[5] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
 
 
-{%endblock%}
+    {%endblock%}

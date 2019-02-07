@@ -1,5 +1,5 @@
 {%extends "layout.html"%}
-{%block title%} Residential Results {%endblock%}
+{%block title%} Postcode Results {%endblock%}
 
 
 <head>
@@ -26,18 +26,15 @@
   </ul>
 </nav>
 {%endblock%}
-
-
 {%block content%}
-
 
 <div class="row">
   <div class="col-md-12 col-lg-12 col-sm-12">
     <table class=dataTable id="people_results">
       <thead>
         <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
+          <th>Name</th>
+          <th>Category</th>
           <th>Address</th>
           <th>City</th>
           <th>Country</th>
@@ -46,21 +43,17 @@
         </tr>
       </thead>
       <tbody>
-        {% for person in people %}
+        {% for business in businesses %}
         <tr>
-          <td>{{ person[1] }}</td>
-          <td>{{ person[2] }}</td>
-          <td>{{ person[3] }}</td>
-          <td>{{ person[4] }}</td>
-          <td>{{ person[5] }}</td>
-          <td>{{ person[6] }}</td>
-          <td>{{ person[7] }}</td>
+          <td>{{ business[1] }}</td>
+          <td>{{ business[9] }}</td>
+          <td>{{ business[2] }}</td>
+          <td>{{ business[3] }}</td>
+          <td>{{ business[4] }}</td>
+          <td>{{ business[5] }}</td>
+          <td>{{ business[8] }}</td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
-
-
-    {%endblock%}
-
-    </html>
+    {% endblock %}
