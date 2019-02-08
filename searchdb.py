@@ -59,12 +59,12 @@ def getBusinessDB():
 #######################GE USER POSTCODE ######################################
 
 
-#def get_user_postcode():
-#    user_postcode = input('Please enter your postcode:').upper().replace(' ','')
-#    if len(user_postcode) <=9:
-#        return user_postcode
-#    else:
-#        return False
+def get_user_postcode():
+   user_postcode = input('Please enter your postcode:').upper().replace(' ','')
+   if len(user_postcode) <=9:
+       return user_postcode
+   else:
+       return False
 
 def getuser_geolocation(user_post):
     endpoint_postcode = "https://api.postcodes.io/postcodes/"
@@ -90,7 +90,7 @@ def distance(lat1,long1,lat2,long2):
     return hdist
 
 def filterPostcodes(user_post):
-    user_post = user_post.upper().replace(' ','') 
+    user_post = user_post.upper().replace(' ','')
     database = getBusinessDB()
     user_log_lat = list(getuser_geolocation(user_post))
     busi = {}
@@ -100,7 +100,7 @@ def filterPostcodes(user_post):
        busi[row[1]]= dist
     sorted_by_distance = sorted(busi.items(), key=lambda kv: kv[1])
     top50byDistance = sorted_by_distance[:50]
-    
+
     return top50byDistance
 
 def getBusiness_top50(user_post):
@@ -111,37 +111,37 @@ def getBusiness_top50(user_post):
         for row in database:
             if value[0] == row[1]:
                 category_list.append(row)
-            
+
     return category_list
 
 
-def find_business_by_name(name): 
-    results = getBusinessDB() 
+
+def find_business_by_name(name):
+    results = getBusinessDB()
     business_name_list = []
     for row in results:
         business_name = row[1]
         if name.capitalize() in business_name:
            business_name_list.append(row)
-    
+
     if business_name_list==[]:
         return "cannot find name"
-    
+
     else:
         return business_name_list
 
 
-
 def business_by_category(category):
-    results = getBusinessDB() 
+    results = getBusinessDB()
     business_list = []
     for row in results:
         businesscategory = row[9]
         if category.lower() in businesscategory.lower() :
             business_list.append(row)
-            
+
     if business_list==[]:
         return "cannot find name"
-    
+
     else:
         return business_list
 
