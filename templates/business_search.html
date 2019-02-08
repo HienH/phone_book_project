@@ -30,7 +30,7 @@
 {%block content%}
 <section id=business_inputs>
 
-  <div id="business_by_name">
+  <div class="column">
     <h3>Business name search</h3>
     <form method="POST" action="/business_results">
       <label for="business_name">Search for:</label>
@@ -41,7 +41,7 @@
     </form>
   </div>
 
-  <div id="business_by_category">
+  <div class="column">
     <h3>Business Category </h3>
     <form method="POST" action="/businesscategory_results">
       <label for="category">Search for:</label>
@@ -53,7 +53,7 @@
     </form>
   </div>
 
-  <div id="business_by_postcode">
+  <div class="column">
 
     <h3>Postcode search</h3>
     <form method="POST" action="/business_postcode_result">

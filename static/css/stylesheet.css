@@ -34,6 +34,12 @@ img {
   display: block;
 }
 
+body, html {
+  background-color: white;
+  height: 100vh;
+  overflow: hidden;
+}
+
 /* ----------------------------------------------  */
 
 
@@ -402,10 +408,7 @@ table.dataTable td {
 
 /***************** OTHER STYLES *******************/
 
-body {
-  background-color: white;
-  height: 100%;
-}
+
 
 
 h1 {
@@ -567,19 +570,22 @@ button {
   padding: 5px;
 }
 
+main {
+  height: 100%;
 }
 
 section.redirect_buttons {
   clear: both;
   width: 100%;
   position: relative;
+  height: 100%;
 
 }
 
 section.findperson {
   float: left;
   /* margin: 100px auto; */
-  height: 550px;
+  height: 80vh;
   width: 50%;
   /* Code for background with grey overlay */
   background: linear-gradient(
@@ -605,7 +611,7 @@ section.findbusiness {
   border-left: 1px solid white;
   float: right;
   /* margin: 100px auto; */
-  height: 550px;
+  height: 80vh;
   width: 50%;
   background: linear-gradient(
                      rgba(20,20,20, .4),
@@ -718,6 +724,9 @@ footer {
   clear: both;
   height: 100px;
   background: #F75C03;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 footer p {
@@ -738,15 +747,15 @@ footer p {
   width: 100%;
 }
 
-#business_by_name {
-  width: 30%;
+.column {
+  float:left;
+  width: 33.33%;
+  height: 100%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
-#business_by_category {
-  width: 30%;
-  float: right;
-}
-
-#business_by_postcode {
-  width: 30%;
+.column h3 {
+  padding-top: 20px;
+  text-align:center;
 }

@@ -23,8 +23,17 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="../static/css/stylesheet.css" />
 </head>
 {% endblock %}
+<body>
 
 <header>
+
+	<script>
+	    $(document).ready(function () {
+	        $('#people_results').DataTable();
+	    });
+
+	</script>
+
 	<nav id="logobar">
 		<ul>
 			<li><a href="{{url_for('index')}}"><img src="static/images/logo.png" alt="company logo" /></a></li>
@@ -68,11 +77,6 @@
 	{% endblock %}
 </footer>
 
-<script>
-    $(document).ready(function () {
-        $('#people_results').DataTable();
-    });
 
-</script>
 
 </body>
