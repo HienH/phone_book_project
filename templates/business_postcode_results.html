@@ -1,27 +1,51 @@
-<!DOCTYPE html>
-<html>
+{%extends "layout.html"%}
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  <script src="main.js"></script>
-</head>
+{%block nav%}
+<nav id="navbar">
+  <ul>
+    <a href="/" class="navlinks">
+      <li class="nav-list-elements">Home</li>
+    </a>
+    <a href="person_search.html" class="navlinks">
+      <li class="nav-list-elements">Find a person</li>
+    </a>
+    <a href="business_search" class="navlinks">
+      <li class="nav-list-elements" id="last-nav-element">Find a business</li>
+    </a>
+  </ul>
+</nav>
+{%endblock%}
 
-<body>
-  <h1>{{title}}</h1>
-  {% if business_postcode %}
+{%block content%}
+<main id="postcode-wrapper">
 
-  <ol>
-    {% for business in business_postcode %}
-    <li>{{ business }}</li>
-    {% endfor %}
-  </ol>
-  {%endif%}
 
-  <div class="row">
+
+  <h1>Businesses closest to the postcode you entered</h1>
+  <div class="narrow-search">
+  <label for="category" id="narrow-search">Search nearby businesses by type: </label>
+    <input type="text" name="category" placeholder="Enter business type" />
+  </div>
+  
+  <div id="postcode_list_results">
+    {% if business_postcode %}
+    <ul>
+      {% for business in business_postcode %}
+      <li> <span id='business-name'>{{ business[1] }}</span>
+        <span id='business-type'>{{ business[9]}}</span>
+        <span id='business-address'>{{ business[2] }}</span>
+        <span id='business-town'>{{ business[3] }}</span>
+        <span id='business-country'>{{ business[4] }}</span>
+        <span id='business-postcode'>{{ business[5] }}</span>
+        <span id='business-tel'>{{ business[8] }}</span></li>
+      </br>
+      {% endfor %}
+    </ul>
+
+    {%endif%}
+  </div>
+
+  <!-- <div class="row">
     <div class="col-md-12 col-lg-12 col-sm-12">
       <table class=dataTable id="people_results">
         <thead>
@@ -51,10 +75,7 @@
         </tbody>
       </table>
     </div>
-  </div>
+  </div> -->
 
-
-
-</body>
-
-</html>
+</main>
+{%endblock%}

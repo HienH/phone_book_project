@@ -34,11 +34,7 @@ img {
   display: block;
 }
 
-body, html {
-  background-color: white;
-  height: 100vh;
-  overflow: hidden;
-}
+
 
 /* ----------------------------------------------  */
 
@@ -546,10 +542,6 @@ background-repeat: no-repeat;
 } */
 
 
-main {
-  clear: both;
-}
-
 table {
   margin: 10px;
 }
@@ -572,9 +564,6 @@ button {
   padding: 5px;
 }
 
-main {
-  height: 100%;
-}
 
 section.redirect_buttons {
   clear: both;
@@ -804,4 +793,44 @@ footer p {
                      url("../images/crane.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/*************************************************************************
+************************** POSTCODE RESULTS PAGE *************************
+*************************************************************************/
+#postcode_wrapper {
+  height: 100vh;
+
+}
+
+#postcode_list_results {
+  padding: 30px;
+  height: 65vh;
+  overflow: scroll;
+  text-align: center;
+  /* background: rgba(0, 0, 0, 0.5) */
+}
+
+#postcode_list_results ul {
+  list-style: none;
+  font-size: 24px;
+}
+
+span {
+  display: block;
+}
+
+#business-name {
+  font-weight: bold;
+}
+
+.narrow-search {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#home-page-wrapper {
+  background-color: white;
+  height: 100vh;
+  overflow: hidden;
 }
