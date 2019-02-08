@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <!-- <h1>{{title}}</h1> -->
+  <!-- {% if business_postcode %} -->
+  <!-- 
+  <ol>
+    {% for business in business_postcode %}
+    <li>{{ business }}</li>
+    {% endfor %}
+  </ol> -->
+  <!-- {%endif%} -->
+
+  <div class="row">
+=======
 {%extends "layout.html"%}
 
 {%block nav%}
@@ -45,7 +71,12 @@
     {%endif%}
   </div>
 
+<<<<<<< HEAD
   <div class="row">
+=======
+  <!-- <div class="row">
+>>>>>>> 6bde90754960cd954ea0458360c3ba81e5e6b0ed
+>>>>>>> a633995f0f0bc815fb091c476f5724229c956f83
     <div class="col-md-12 col-lg-12 col-sm-12">
       <table class=dataTable id="people_results">
         <thead>
@@ -60,22 +91,30 @@
 
           </tr>
         </thead>
+        {% if business_postcode %}
+
         <tbody>
-          {% for person in people %}
+          {% for business in business_postcode %}
           <tr>
-            <td>{{ person[1] }}</td>
-            <td>{{ person[2] }}</td>
-            <td>{{ person[3] }}</td>
-            <td>{{ person[4] }}</td>
-            <td>{{ person[5] }}</td>
-            <td>{{ person[6] }}</td>
-            <td>{{ person[7] }}</td>
+            <td>{{ business[1] }}</td>
+            <td>{{ business[2] }}</td>
+            <td>{{ business[3] }}</td>
+            <td>{{ business[4] }}</td>
+            <td>{{ business[5] }}</td>
+            <td>{{ business[8] }}</td>
+            <td>{{ business[9] }}</td>
           </tr>
           {% endfor %}
         </tbody>
+        {%endif%}
+
       </table>
     </div>
   </div>
 
+<<<<<<< HEAD
+</html>un
+=======
 </main>
 {%endblock%}
+>>>>>>> 6bde90754960cd954ea0458360c3ba81e5e6b0ed
