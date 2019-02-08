@@ -54,11 +54,11 @@
     </form>
   </div>
 
-  <div class="column">
+  <div class="column" id="business_by_postcode">
 
     <h3>Postcode search</h3>
     <form method="POST" action="/business_postcode_result">
-      <label for="postcode">Search for:</label>
+      <label for="postcode">Search in:</label>
       <input class="input" name="postcode" type="text" placeholder="Business postcode" id="postcode">
       {%if message_postcode%}
       <p>{{message_postcode}}</p>

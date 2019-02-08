@@ -758,8 +758,47 @@ footer p {
 .column h3 {
   padding-top: 220px;
   text-align:center;
+  color: white;
 }
 
 .column input {
   border: 0.5px solid grey;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.column form {
+  background: none;
+  color: white;
+}
+
+.column label {
+  color: white;
+}
+
+
+#business_by_postcode {
+  background: linear-gradient(
+                     rgba(2, 16, 17, .5),
+                     rgba(2, 16, 17, .5)),
+                     url("../images/map_pin.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#business_by_name {
+  background: linear-gradient(
+                     rgba(2, 16, 17, .5),
+                     rgba(2, 16, 17, .5)),
+                     url("../images/alpha.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#business_by_category{
+  background: linear-gradient(
+                     rgba(2, 16, 17, .5),
+                     rgba(2, 16, 17, .5)),
+                     url("../images/crane.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
