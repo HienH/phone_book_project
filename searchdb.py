@@ -99,8 +99,22 @@ def filterPostcodes(user_post):
        dist = distance(user_log_lat[0],user_log_lat[1],float(business_lat_lat[0]),float(business_lat_lat[1]))
        busi[row[1]]= dist
     sorted_by_distance = sorted(busi.items(), key=lambda kv: kv[1])
-    top50 = sorted_by_distance[:50]
-    return top50
+    top50byDistance = sorted_by_distance[:50]
+    
+    return top50byDistance
+
+def getBusiness_top50(user_post):
+    top50 = filterPostcodes(user_post)
+    database = getBusinessDB()
+    category_list = []
+    for value in top50 :
+        for row in database:
+            if value[0] == row[1]:
+                category_list.append(row)
+            
+    return category_list
+
+    
 
 def find_business_by_name(name): 
     results = getBusinessDB() 

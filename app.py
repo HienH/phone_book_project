@@ -55,7 +55,7 @@ def business_by_postcode():
     form_data = request.form
     postcode = form_data["postcode"]
     if postcode:
-        business_postcode = filterPostcodes(postcode)
+        business_postcode = getBusiness_top50(postcode)
         if (isinstance(business_postcode,list)):
             return render_template("business_postcode_results.html", title = "businesspostcoderesults", **locals())
         else:
