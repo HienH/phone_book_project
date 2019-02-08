@@ -49,10 +49,12 @@ body, html {
 
 .row {
   padding: 20px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 table.dataTable {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   clear: both;
   border-collapse: separate;
@@ -428,6 +430,7 @@ header {
 main {
   clear: both;
   width: 100%;
+  padding: 20px;
 }
 
 main a:hover {
@@ -727,6 +730,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  margin-top: 20px;
 }
 
 footer p {
