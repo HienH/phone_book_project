@@ -26,9 +26,9 @@
 </nav>
 {%endblock%}
 
-<div>
-  {%block content%}
 
+{%block content%}
+<section id=business_inputs>
   <h3>Business name search</h3>
   <form method="POST" action="/business_results" id="business_by_name">
     <label for="business_name">Search for:</label>
@@ -40,7 +40,7 @@
 
 
   <h3>Business Category </h3>
-  <form method="POST" action="/businesscategory_results" id="businesscategory_results">
+  <form method="POST" action="/businesscategory_results" id="business__by_category">
     <label for="category">Search for:</label>
     <input class="input" name="category" type="text" placeholder="Category business search " id="category">
     {%if message_category%}
@@ -50,7 +50,7 @@
   </form>
 
   <h3>Postcode search</h3>
-  <form method="POST" action="/business_postcode_result" id="business_postcode_result">
+  <form method="POST" action="/business_postcode_result" id="business_by_">
     <label for="postcode">Search for:</label>
     <input class="input" name="postcode" type="text" placeholder="Postcode business search " id="postcode">
     {%if message_postcode%}
@@ -59,8 +59,9 @@
 
   </form>
 
+</section>
 
-  {% endblock %}
+{% endblock %}
 
 </div>
 <section id="wrong-page">
