@@ -107,13 +107,17 @@ def getBusiness_top50(user_post):
     top50 = filterPostcodes(user_post)
     database = getBusinessDB()
     category_list = []
-    for value in top50 :
-        for row in database:
-            if value[0] == row[1]:
-                category_list.append(row)
+    if category_list !=[]:
+        for value in top50 :
+            for row in database:
+                if value[0] == row[1]:
+                    category_list.append(row)
+        return category_list
+    else:
+        return "cannot correct postcode"
 
-    return category_list
-
+       
+    
 
 
 def find_business_by_name(name):
@@ -129,6 +133,7 @@ def find_business_by_name(name):
 
     else:
         return business_name_list
+    
 
 
 def business_by_category(category):
@@ -145,10 +150,16 @@ def business_by_category(category):
     else:
         return business_list
 
-    return business_list
 
-#- enter postcode/ category
-#- find relevant and closest store
+bname = input("search for a business name: ")
+print(find_business_by_name(bname))
+
+buisness_name = input("what business category are you looking for? ")
+print("list of " + buisness_name + "shops near you" )
+print(business_by_category(buisness_name))
+
+post = input("please enter your postcode ")
+print(getBusiness_top50(post))
 
 
 ###############################################################################
@@ -184,3 +195,5 @@ def find_person_by_postcode(postcode): #Passed tests
     for person in final_list:
         print (person)
     return final_list
+
+
