@@ -92,17 +92,20 @@ def distance(lat1,long1,lat2,long2):
 def filterPostcodes(user_post):
     user_post = user_post.upper().replace(' ','')
     database = getBusinessDB()
-    user_log_lat = list(getuser_geolocation(user_post))
-    busi = {}
-    for row in database:
-       business_lat_lat= list(row[6:8])
-       dist = distance(user_log_lat[0],user_log_lat[1],float(business_lat_lat[0]),float(business_lat_lat[1]))
-       busi[row[1]]= dist
-    sorted_by_distance = sorted(busi.items(), key=lambda kv: kv[1])
-    top50byDistance = sorted_by_distance[:50]
+    try: 
+        user_log_lat = list(getuser_geolocation(user_post))
+        busi = {}
+        for row in database:
+           business_lat_lat= list(row[6:8])
+           dist = distance(user_log_lat[0],user_log_lat[1],float(business_lat_lat[0]),float(business_lat_lat[1]))
+           busi[row[1]]= dist
+        sorted_by_distance = sorted(busi.items(), key=lambda kv: kv[1])
+        top50byDistance = sorted_by_distance[:50]
 
-    return top50byDistance
-
+        return top50byDistance
+    except:
+        print("incorrect postcode")
+        
 def getBusiness_top50(user_post):
     top50 = filterPostcodes(user_post)
     database = getBusinessDB()
@@ -114,7 +117,8 @@ def getBusiness_top50(user_post):
                     category_list.append(row)
         return category_list
     else:
-        return "cannot correct postcode"
+        return ("sorry please enter correct postcode ßß")
+  
 
        
     
@@ -145,7 +149,7 @@ def business_by_category(category):
             business_list.append(row)
 
     if business_list==[]:
-        return "cannot find name"
+        return "cannot find" +category+ " shop near you"
 
     else:
         return business_list
@@ -155,7 +159,6 @@ bname = input("search for a business name: ")
 print(find_business_by_name(bname))
 
 buisness_name = input("what business category are you looking for? ")
-print("list of " + buisness_name + "shops near you" )
 print(business_by_category(buisness_name))
 
 post = input("please enter your postcode ")
