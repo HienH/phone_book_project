@@ -114,7 +114,6 @@ def getBusiness_top50(user_post):
             
     return category_list
 
-    
 
 def find_business_by_name(name): 
     results = getBusinessDB() 
@@ -130,20 +129,6 @@ def find_business_by_name(name):
     else:
         return business_name_list
 
-#def display50Business(user_post):
-#    try:
-#        category_list = []
-#        top50 = filterPostcodes(user_post)
-#        database = getBusinessDB()
-#        for values in top50:
-#            for data in database:
-#                if values[0] == data[1]:
-#                    category_list.append(data)
-#
-#        return category_list
-#
-#    except Exception as e:
-#        print (e)
 
 
 def business_by_category(category):
