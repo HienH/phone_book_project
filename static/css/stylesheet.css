@@ -728,3 +728,25 @@ footer p {
   text-align: center;
   padding-top: 35px;
 }
+
+/*************************************************************************
+************************** BUSINESS SEARCH PAGE **************************
+*************************************************************************/
+
+#business_inputs {
+  float: left;
+  width: 100%;
+}
+
+#business_by_name {
+  width: 30%;
+}
+
+#business_by_category {
+  width: 30%;
+  float: right;
+}
+
+#business_by_postcode {
+  width: 30%;
+}
