@@ -116,8 +116,7 @@ def getBusiness_top50(user_post):
             for row in database:
                 if value[0] == row[1]:
                     category_list.append(row)
-        if category_list !=[]:
-            return category_list
+        return category_list
     else:
         return ("sorry please no information for that postcode ")
 
