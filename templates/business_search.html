@@ -19,7 +19,7 @@
     <a href="person_search.html" class="navlinks">
       <li class="nav-list-elements">Find a person</li>
     </a>
-    <a href="business_search.html" class="navlinks">
+    <a href="business_search" class="navlinks">
       <li class="nav-list-elements" id="last-nav-element">Find a business</li>
     </a>
   </ul>
@@ -30,44 +30,44 @@
 <main>
 
 
-<section id=business_inputs>
+  <section id=business_inputs>
 
-  <div class="column" id="business_by_name">
-    <h3>Business name search</h3>
-    <form method="POST" action="/business_results">
-      <label for="business_name">Search for:</label>
-      <input class="input" name="business_name" type="text" placeholder="Business name" id="business_name">
-      {%if message_name%}
-      <p>{{message_name}}</p>
-      {%endif%}
-    </form>
-  </div>
+    <div class="column" id="business_by_name">
+      <h3>Business name search</h3>
+      <form method="POST" action="/business_results">
+        <label for="business_name">Search for:</label>
+        <input class="input" name="business_name" type="text" placeholder="Business name" id="business_name">
+        {%if message_name%}
+        <p>{{message_name}}</p>
+        {%endif%}
+      </form>
+    </div>
 
-  <div class="column" id="business_by_category">
-    <h3>Business Category </h3>
-    <form method="POST" action="/businesscategory_results">
-      <label for="category">Search for:</label>
-      <input class="input" name="category" type="text" placeholder="Business type" id="category">
-      {%if message_category%}
-      <p>{{message_category}}</p>
-      {%endif%}
+    <div class="column" id="business_by_category">
+      <h3>Business Category </h3>
+      <form method="POST" action="/businesscategory_results">
+        <label for="category">Search for:</label>
+        <input class="input" name="category" type="text" placeholder="Business type" id="category">
+        {%if message_category%}
+        <p>{{message_category}}</p>
+        {%endif%}
 
-    </form>
-  </div>
+      </form>
+    </div>
 
-  <div class="column" id="business_by_postcode">
+    <div class="column" id="business_by_postcode">
 
-    <h3>Postcode search</h3>
-    <form method="POST" action="/business_postcode_result">
-      <label for="postcode">Search in:</label>
-      <input class="input" name="postcode" type="text" placeholder="Business postcode" id="postcode">
-      {%if message_postcode%}
-      <p>{{message_postcode}}</p>
-      {%endif%}
+      <h3>Postcode search</h3>
+      <form method="POST" action="/business_postcode_result">
+        <label for="postcode">Search in:</label>
+        <input class="input" name="postcode" type="text" placeholder="Business postcode" id="postcode">
+        {%if message_postcode%}
+        <p>{{message_postcode}}</p>
+        {%endif%}
 
-    </form>
-  </div>
-</section>
+      </form>
+    </div>
+  </section>
 
 
 
