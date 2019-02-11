@@ -1,3 +1,5 @@
+{%extends "layout.html"%}
+{%block title%} Postcode Results {%endblock%}
 <!DOCTYPE html>
 <html>
 
@@ -11,30 +13,40 @@
 </head>
 
 <body>
-  <!-- <h1>{{title}}</h1> -->
-  <!-- {% if business_postcode %} -->
-  <!--
-  <ol>
-    {% for business in business_postcode %}
-    <li>{{ business }}</li>
-    {% endfor %}
-  </ol> -->
-  <!-- {%endif%} -->
+  {%block nav%}
+  <nav id="navbar">
+    <ul>
+      <a href="/" class="navlinks">
+        <li class="nav-list-elements">Home</li>
+      </a>
+      <a href="person_search.html" class="navlinks">
+        <li class="nav-list-elements">Find a person</li>
+      </a>
+      <a href="business_search.html" class="navlinks">
+        <li class="nav-list-elements" id="last-nav-element">Find a business</li>
+      </a>
+    </ul>
+  </nav>
+  {%endblock%}
 
-{%block content%}
 
+  {%block content%}
+
+  <h3 class="resultsheader">Business results for "{{postcode}}"</h3>
   <div class="row">
     <div class="col-md-12 col-lg-12 col-sm-12">
-      <table class=dataTable id="people_results">
+      <table class="table table-hover" id="people_results">
+
         <thead>
+
           <tr>
-            <th>Business Name</th>
-            <th>Address</th>
-            <th>City</th>
-            <th>Country</th>
-            <th>Postcode</th>
-            <th>Telephone</th>
-            <th>Business Category</th>
+            <th scope="col">Business Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">City</th>
+            <th scope="col">Country</th>
+            <th scope="col">Postcode</th>
+            <th scope="col">Telephone</th>
+            <th scope="col">Business Category</th>
 
           </tr>
         </thead>
@@ -42,7 +54,8 @@
 
         <tbody>
           {% for business in business_postcode %}
-          <tr>
+
+          <tr scope="row">
             <td>{{ business[1] }}</td>
             <td>{{ business[2] }}</td>
             <td>{{ business[3] }}</td>
@@ -58,6 +71,6 @@
       </table>
     </div>
   </div>
+  {%endblock%}
 
   </main>
-  {%endblock%}
