@@ -92,7 +92,7 @@ def distance(lat1,long1,lat2,long2):
 def filterPostcodes(user_post):
     user_post = user_post.upper().replace(' ','')
     database = getBusinessDB()
-    try: 
+    try:
         user_log_lat = list(getuser_geolocation(user_post))
         busi = {}
         for row in database:
@@ -105,7 +105,7 @@ def filterPostcodes(user_post):
         return top50byDistance
     except:
         print("incorrect postcode")
-        
+
 def getBusiness_top50(user_post):
     top50 = filterPostcodes(user_post)
     database = getBusinessDB()
@@ -117,11 +117,11 @@ def getBusiness_top50(user_post):
                     category_list.append(row)
         return category_list
     else:
-        return ("sorry please enter correct postcode  ")
-  
+        return ("sorry please no information for that postcode ")
 
-       
-    
+
+
+
 
 
 def find_business_by_name(name):
@@ -137,7 +137,7 @@ def find_business_by_name(name):
 
     else:
         return business_name_list
-    
+
 
 
 def business_by_category(category):
@@ -155,14 +155,14 @@ def business_by_category(category):
         return business_list
 
 
-bname = input("search for a business name: ")
-print(find_business_by_name(bname))
-
-buisness_name = input("what business category are you looking for? ")
-print(business_by_category(buisness_name))
-
-post = input("please enter your postcode ")
-print(getBusiness_top50(post))
+# bname = input("search for a business name: ")
+# print(find_business_by_name(bname))
+#
+# buisness_name = input("what business category are you looking for? ")
+# print(business_by_category(buisness_name))
+#
+# post = input("please enter your postcode ")
+# print(getBusiness_top50(post))
 
 
 ###############################################################################
@@ -198,5 +198,3 @@ def find_person_by_postcode(postcode): #Passed tests
     for person in final_list:
         print (person)
     return final_list
-
-
