@@ -568,7 +568,7 @@ section.redirect_buttons {
 section.findperson {
   float: left;
   /* margin: 100px auto; */
-  height: 80vh;
+  height: 100vh;
   width: 50%;
   /* Code for background with grey overlay */
   background: linear-gradient(
@@ -594,7 +594,7 @@ section.findbusiness {
   border-left: 1px solid white;
   float: right;
   /* margin: 100px auto; */
-  height: 80vh;
+  height: 100vh;
   width: 50%;
   background: linear-gradient(
                      rgba(20,20,20, .4),
@@ -684,6 +684,8 @@ button:hover {
 }
 
 #wrong-page {
+  display: block;
+  clear:both;
   text-align: center;
   font-family: 'Sarabun', sans-serif;
   font-size: 22px;
@@ -703,26 +705,6 @@ button:hover {
   color: #F75C03;
 }
 
-footer {
-  display: block;
-  clear: both;
-  height: 100px;
-  background: #F75C03;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin-top: 20px;
-}
-
-footer p {
-  color: white;
-  font-size: 18px;
-  margin: 0 auto;
-  font-family: 'Sarabun', sans-serif;
-  text-align: center;
-  padding-top: 35px;
-}
-
 /*************************************************************************
 ************************** BUSINESS SEARCH PAGE **************************
 *************************************************************************/
@@ -733,9 +715,9 @@ footer p {
 }
 
 .column {
-  float:left;
+  float: left;
   width: 33.33%;
-  height: 80vh;
+  height: 100vh;
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
@@ -829,6 +811,25 @@ span {
 }
 
 
+footer {
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: #F75C03;
+  position: static;
+  /* margin-top: 20px; */
+}
+
+footer p {
+  color: white;
+  font-size: 18px;
+  margin: 0 auto;
+  font-family: 'Sarabun', sans-serif;
+  text-align: center;
+  padding-top: 35px;
+}
+
+
 @media screen and (max-width: 490px) {
   section.findperson {
     float: left;
@@ -843,6 +844,7 @@ span {
   }
 
   footer {
+    position: absolute;
     bottom: 0;
     clear: both;
   }
