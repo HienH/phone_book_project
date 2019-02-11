@@ -7,8 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  <script src="main.js"></script>
+
 </head>
 
 {%block nav%}
@@ -27,8 +26,8 @@
 </nav>
 {%endblock%}
 
-
 {%block content%}
+
 <script>
   $(document).ready(function () {
     $('#people_results').DataTable();
@@ -77,5 +76,10 @@
   {% endblock %}
 </footer>
 
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#people_results').DataTable();
+  });
+</script>
 
 </html>
