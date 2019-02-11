@@ -515,16 +515,7 @@ background-position: center;
 background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 490px) {
-  div.landline {
-    background: linear-gradient(
-                       rgba(20,20,20, .2),
-                       rgba(20,20,20, .2)),
-                       url("../images/blackphone.png");
-    background-size: cover;
-    background-position: center;
-    /* background-repeat: no-repeat; */
-  }
+
 
   .text {
     color: black;
@@ -569,7 +560,8 @@ section.redirect_buttons {
   clear: both;
   width: 100%;
   position: relative;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
 
 }
 
@@ -712,6 +704,7 @@ button:hover {
 }
 
 footer {
+  display: block;
   clear: both;
   height: 100px;
   background: #F75C03;
@@ -831,6 +824,27 @@ span {
 
 #home-page-wrapper {
   background-color: white;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
+
+
+@media screen and (max-width: 490px) {
+  section.findperson {
+    float: left;
+    display: block;
+    width: 100%;
+  }
+
+  section.findbusiness {
+    float: left;
+    display: block;
+    width: 100%;
+  }
+
+  footer {
+    bottom: 0;
+    clear: both;
+  }
+
+  }

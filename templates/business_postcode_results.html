@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -14,7 +13,7 @@
 <body>
   <!-- <h1>{{title}}</h1> -->
   <!-- {% if business_postcode %} -->
-  <!-- 
+  <!--
   <ol>
     {% for business in business_postcode %}
     <li>{{ business }}</li>
@@ -23,59 +22,6 @@
   <!-- {%endif%} -->
 
   <div class="row">
-=======
-{%extends "layout.html"%}
-
-{%block nav%}
-<nav id="navbar">
-  <ul>
-    <a href="/" class="navlinks">
-      <li class="nav-list-elements">Home</li>
-    </a>
-    <a href="person_search.html" class="navlinks">
-      <li class="nav-list-elements">Find a person</li>
-    </a>
-    <a href="business_search" class="navlinks">
-      <li class="nav-list-elements" id="last-nav-element">Find a business</li>
-    </a>
-  </ul>
-</nav>
-{%endblock%}
-
-{%block content%}
-<main id="postcode-wrapper">
-
-
-
-  <h1>Businesses closest to the postcode you entered</h1>
-  <div class="narrow-search">
-  <label for="category" id="narrow-search">Search nearby businesses by type: </label>
-    <input type="text" name="category" placeholder="Enter business type" />
-  </div>
-
-  <div id="postcode_list_results">
-    {% if business_postcode %}
-    <ul>
-      {% for business in business_postcode %}
-      <li> <span id='business-name'>{{ business[1] }}</span>
-        <span id='business-type'>{{ business[9]}}</span>
-        <span id='business-address'>{{ business[2] }}</span>
-        <span id='business-town'>{{ business[3] }}</span>
-        <span id='business-country'>{{ business[4] }}</span>
-        <span id='business-postcode'>{{ business[5] }}</span>
-        <span id='business-tel'>{{ business[8] }}</span></li>
-      </br>
-      {% endfor %}
-    </ul>
-
-    {%endif%}
-  </div>
-
-<<<<<<< HEAD
-  <div class="row">
-=======
-  <!-- <div class="row">
->>>>>>> 6bde90754960cd954ea0458360c3ba81e5e6b0ed
 >>>>>>> a633995f0f0bc815fb091c476f5724229c956f83
     <div class="col-md-12 col-lg-12 col-sm-12">
       <table class=dataTable id="people_results">
@@ -112,9 +58,5 @@
     </div>
   </div>
 
-<<<<<<< HEAD
-</html>un
-=======
 </main>
 {%endblock%}
->>>>>>> 6bde90754960cd954ea0458360c3ba81e5e6b0ed
