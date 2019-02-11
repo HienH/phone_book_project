@@ -117,7 +117,7 @@ def getBusiness_top50(user_post):
                     category_list.append(row)
         return category_list
     else:
-        return ("sorry please enter correct postcode ")
+        return ("sorry please enter correct postcode  ")
   
 
        
