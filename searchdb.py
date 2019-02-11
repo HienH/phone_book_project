@@ -109,19 +109,17 @@ def filterPostcodes(user_post):
         
 def getBusiness_top50(user_post):
     top50 = filterPostcodes(user_post)
-    print(top50)
     database = getBusinessDB()
     category_list = []
-    for value in top50 :
-        for row in database:
-            if value[0] == row[1]:
-                category_list.append(row)
-    if category_list !=[]:
-        return category_list
+    if (isinstance(top50,list)):
+        for value in top50 :
+            for row in database:
+                if value[0] == row[1]:
+                    category_list.append(row)
+        if category_list !=[]:
+            return category_list
     else:
         return ("sorry please no information for that postcode ")
-
-
 
 
 def find_business_by_name(name):
