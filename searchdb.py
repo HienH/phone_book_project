@@ -116,10 +116,13 @@ def getBusiness_top50(user_post):
             for row in database:
                 if value[0] == row[1]:
                     category_list.append(row)
+                else:
+                    pass
         return category_list
     else:
         return ("sorry please no information for that postcode ")
 
+print(getBusiness_top50('t'))
 
 def find_business_by_name(name):
     results = getBusinessDB()
